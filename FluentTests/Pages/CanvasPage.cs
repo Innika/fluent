@@ -26,18 +26,21 @@ namespace FluentTests.Pages
             return shapes;
         }
 
-        public void DrawLine(int x, int y)
+        public CanvasPage DrawLine(int x, int y)
         {
             if (IsShapeOptionSelected(LineTool) == false)
                 LineTool.Click();
             DragAndDropOnCanvas(x, y);
+
+            return this;
         }
 
-        public void DrawEllipse(int x, int y)
+        public CanvasPage DrawEllipse(int x, int y)
         {
             if (IsShapeOptionSelected(EllipseTool) == false)
                 EllipseTool.Click();
             DragAndDropOnCanvas(x, y);
+            return this;
         }
 
         private void DragAndDropOnCanvas(int x, int y)
@@ -52,26 +55,30 @@ namespace FluentTests.Pages
             return element.GetAttribute("class").Contains("current");
         }
 
-        public void SelectFillColor(string colorCode)
+        public CanvasPage SelectFillColor(string colorCode)
         {
             ColorFillCircle(colorCode).Click();
+            return this;
         }
 
-        public void SelectStrokeColor(string colorCode)
+        public CanvasPage SelectStrokeColor(string colorCode)
         {
             ColorStrokeCircle(colorCode).Click();
+            return this;
         }
 
-        public void SetStrokeWidth(int widthValue)
+        public CanvasPage SetStrokeWidth(int widthValue)
         {
             StrokeWidthInput.Clear();
             StrokeWidthInput.SendKeys(widthValue.ToString());
+            return this;
         }
 
-        public void SetOpacity(double opacityValue)
+        public CanvasPage SetOpacity(double opacityValue)
         {
             OpacityInput.Clear();
             OpacityInput.SendKeys(opacityValue.ToString());
+            return this;
         }
 
         #region Elements

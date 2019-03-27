@@ -2,15 +2,14 @@
 {
     public class Shape
     {
-        public int X, Y;
+        public int X;
+        public int Y;
         public string FillColor, StrokeColor;
         public double OpacityValue;
         public int StrokeWidth;
 
-        // TODO add coordinates prop
-
-        public Shape(int x = 0, int y = 0, string fillColor = null,
-            string strokeColor = null, double opacityValue = 1, int strokeWidth = 1)
+        public Shape(int x = 0, int y = 0, string fillColor = "#4a90d6",
+            string strokeColor = "#222222", double opacityValue = 1, int strokeWidth = 2)
         {
             X = x;
             Y = y;
